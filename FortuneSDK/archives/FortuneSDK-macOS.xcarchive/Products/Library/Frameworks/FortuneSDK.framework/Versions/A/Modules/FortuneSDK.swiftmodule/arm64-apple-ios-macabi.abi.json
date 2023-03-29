@@ -1,0 +1,155 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FortuneSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SDK",
+        "printedName": "SDK",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SDK",
+                "printedName": "FortuneSDK.SDK",
+                "usr": "s:10FortuneSDK0B0C"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10FortuneSDK0B0CACycfc",
+            "mangledName": "$s10FortuneSDK0B0CACycfc",
+            "moduleName": "FortuneSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "fortune",
+            "printedName": "fortune",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10FortuneSDK0B0C7fortuneSSvp",
+            "mangledName": "$s10FortuneSDK0B0C7fortuneSSvp",
+            "moduleName": "FortuneSDK",
+            "declAttributes": [
+              "Lazy",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10FortuneSDK0B0C7fortuneSSvg",
+                "mangledName": "$s10FortuneSDK0B0C7fortuneSSvg",
+                "moduleName": "FortuneSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10FortuneSDK0B0C7fortuneSSvs",
+                "mangledName": "$s10FortuneSDK0B0C7fortuneSSvs",
+                "moduleName": "FortuneSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10FortuneSDK0B0C7fortuneSSvM",
+                "mangledName": "$s10FortuneSDK0B0C7fortuneSSvM",
+                "moduleName": "FortuneSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10FortuneSDK0B0C",
+        "mangledName": "$s10FortuneSDK0B0C",
+        "moduleName": "FortuneSDK",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/arthur\/Developer\/github\/use-cases\/FortuneSDK\/FortuneSDK\/FortuneSDK\/Fortune.swift",
+      "kind": "StringLiteral",
+      "offset": 276,
+      "length": 127,
+      "value": "\"https:\/\/raw.githubusercontent.com\/arthurkahwa\/use-cases\/0f5853767d6cf7caa15b03fa4feae6f7783c785c\/FortuneSDK\/FortuneTexts.json\""
+    },
+    {
+      "filePath": "\/Users\/arthur\/Developer\/github\/use-cases\/FortuneSDK\/FortuneSDK\/FortuneSDK\/Fortune.swift",
+      "kind": "StringLiteral",
+      "offset": 959,
+      "length": 38,
+      "value": "\"Sorry no fortune - Please try again!\""
+    }
+  ]
+}

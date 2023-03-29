@@ -1,0 +1,11 @@
+framework module FortuneSDK {
+  umbrella header "FortuneSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module FortuneSDK.Swift {
+  header "FortuneSDK-Swift.h"
+  requires objc
+}
