@@ -9,8 +9,8 @@ import Foundation
 
 typealias FortuneTexts = [String: [String]]
 
-class FortuneCookie {
-    func fortune() -> String {
+class SDK {
+    lazy var fortune: String = {
         do {
             if let path = Bundle.main.url(forResource: "FortuneTexts", withExtension: "json") {
                 let data = try Data(contentsOf: path)
@@ -28,5 +28,5 @@ class FortuneCookie {
         }
         
         return "Sorry no fortune - Please try again!"
-    }
+    }()
 }

@@ -10,8 +10,8 @@ import XCTest
 
 final class FortuneSDKTests: XCTestCase {
     func testFortune() throws {
-        let cookie = FortuneCookie()
-        let fortune = cookie.fortune()
+        
+        let fortune = SDK().fortune
         
         XCTAssertNotNil(fortune, "The fortune is empty or nil")
     }
