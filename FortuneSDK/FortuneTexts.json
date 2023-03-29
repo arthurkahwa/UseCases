@@ -1,39 +1,3 @@
-//
-//  Fortune.swift
-//  FortuneSDK
-//
-//  Created by Arthur Nsereko Kahwa on 3/29/23.
-//
-
-import Foundation
-
-typealias FortuneTexts = [String: [String]]
-
-public class SDK {
-    public init() {}
-    
-    public lazy var fortune: String = {
-        do {
-            if let path = Bundle.main.url(forResource: "FortuneTexts", withExtension: "json") {
-                let data = try Data(contentsOf: path)
-                
-                let fortunes = try JSONDecoder().decode(FortuneTexts.self, from: data)
-                
-                if let category = fortunes.randomElement(),
-                   let fortune = category.value.randomElement() {
-                    return fortune
-                }
-            }
-        }
-        catch {
-            return String(describing: error)
-        }
-        
-        return "Sorry no fortune - Please try again!"
-    }()
-    
-    lazy var allFortunes: String = {
-        return """
 {
     "ethnic": [
         "\tA German, a Pole and a Czech left camp for a hike through the woods.\nAfter being reported missing a day or two later, rangers found two bears,\none a male, one a female, looking suspiciously overstuffed.  They killed\nthe female, autopsied her, and sure enough, found the German and the Pole.\n\t\"What do you think?\" said the the first ranger.\n\t\"The Czech is in the male,\" replied the second.\n",
@@ -13972,8 +13936,4 @@ public class SDK {
         "The first sign of corruption in a society that is still alive is that\nthe end justifies the means.\n\t\t-- Georges Bernanos (1888-1948), French novelist,\n                   political writer. \"Why Freedom?\" The last essays of\n\t\t   George Bernanos (1955)\n",
         "\n"
     ]
-}
-
-"""
-    }()
 }
