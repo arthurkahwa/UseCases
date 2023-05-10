@@ -8,4 +8,7 @@
 A whimsical version of a possible solar system
 - The sun orbitting the earth
 - Venus with a moon
-- Russel's Teapot flying through it all
+- Russel's Teapot flying around through it all
+
+## Dancin Warrior
+Tap on The Warrior to see him make a cool dance move.
