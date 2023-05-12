@@ -22,20 +22,19 @@ struct ContentView : View {
             List(kitItems, id: \.self, selection: $selectedItem) { item in
                 Text(item)
             }
+            .navigationTitle("Kit List")
         } detail: {
             if let selectedItem = selectedItem {
-                Text(selectedItem)
+                Text("Tap to show a \(selectedItem)")
+                    .font(.caption2)
                 
-                ARViewContainer(kitName: selectedItem).edgesIgnoringSafeArea(.bottom)
+                ARViewContainer(kitName: selectedItem)
+                    .edgesIgnoringSafeArea(.bottom)
             }
             else {
                 EmptyView()
             }
         }
-        .navigationTitle("Kit List")
-//        .onTapGesture { location in
-//            print("List: \(location)")
-//        }
     }
 }
 
@@ -48,32 +47,10 @@ struct ARViewContainer: UIViewRepresentable {
         context.coordinator.arView = arView
         context.coordinator.kitName = kitName
         
-//        let viewCenter = arView.center // CGPointMake(arView.bounds.width / 2, arView.bounds.height / 2)
-        
         let tapGestureRecogniser = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleTap(from:)))
         arView.addGestureRecognizer(tapGestureRecogniser)
         
         return arView
-        
-        
-//        if let result = arView.raycast(from: viewCenter,
-//                                          allowing: .estimatedPlane,
-//                                          alignment: .horizontal).first {
-//            let anchorEntity = AnchorEntity(raycastResult: result)
-//
-//            // Load the "Box" scene from the "Experience" Reality File
-//            let boxAnchor = try! Experience.loadBox()
-            
-            // Add the box anchor to the scene
-//            arView.scene.anchors.append(boxAnchor)
-//
-//            if let modelEntity = try? Entity.loadModel(named: "suit") {
-//                anchorEntity.addChild(modelEntity)
-//                arView.scene.addAnchor(anchorEntity)
-//            }
-//        }
-//
-//        return arView
     }
     
     func makeCoordinator() -> Coordinator {
@@ -95,15 +72,14 @@ class Coordinator: NSObject {
         guard let arView = arView
         else { return }
         
-        // Clear the playing field
-        arView.scene.anchors.removeAll()
-        
+        // Make sure we do not have duplicates
+        guard arView.scene.anchors.first(where: { $0.name == kitName}) == nil
+        else {
+            return
+        }
+
         // Make sure we have the name of kit we want to show
         if let kitName = kitName {
-            let tapLocation = arView.center
-            print("view: \(tapLocation)")
-            print("Kit: \(kitName)")
-            
             if let raycast = arView.raycast(from: arView.center,
                                             allowing: .estimatedPlane,
                                             alignment: .horizontal).first {

@@ -12,3 +12,6 @@ A whimsical version of a possible solar system
 
 ## Dancin Warrior
 Tap on The Warrior to see him make a cool dance move.
+
+## Space Kit
+A selection of things useful for your next trip to Mars.
