@@ -23,3 +23,8 @@ Demonstrated are:
 * _CoreData_ Data Storade
 * _CoreData_ Data Deletion
 * Use of global environment variables
+
+## Universal Blogger
+The moving parts of a simple blogging app
+* SpringBoot Backend providing REST function
+* SwiftUI front end
