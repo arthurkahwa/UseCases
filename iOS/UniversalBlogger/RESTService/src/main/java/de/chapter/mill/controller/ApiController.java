@@ -21,7 +21,7 @@ public class ApiController {
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("getAllUsers")
+    @GetMapping("users")
     public ResponseEntity<List<User>> getAllUsers() {
         LOGGER.trace("Get all Users");
 
@@ -42,11 +42,11 @@ public class ApiController {
         }
     }
 
-    @PostMapping("/users")
+    @PostMapping("users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         try {
             User _user = userRepository
-                    .save(new User(user.getUserName(), user.getEmail()));
+                    .save(new User(user.getUsername(), user.getEmail()));
             return new ResponseEntity<>(_user, HttpStatus.OK);
         }
         catch (Exception exception) {

@@ -14,13 +14,13 @@ public class User {
     private Long id;
 
     @Column(name = "user_name")
-    private String userName;
+    private String username;
 
     @Column(name = "email")
     private String email;
 
-    public User(String userName, String email) {
-        this.userName = userName;
+    public User(String username, String email) {
+        this.username = username;
         this.email = email;
     }
 }
