@@ -1,19 +1,19 @@
 package de.chapter.mill.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Entity
-@lombok.Data
+@Data
 @NoArgsConstructor
-@Table(name = "tblUser")
+@Table(name = "tbl_user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "userName")
+    @Column(name = "user_name")
     private String userName;
 
     @Column(name = "email")

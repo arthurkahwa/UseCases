@@ -2,6 +2,8 @@ package de.chapter.mill.controller;
 
 import de.chapter.mill.entity.User;
 import de.chapter.mill.repository.UserRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,27 +15,27 @@ import java.util.List;
 // @CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api")
-public class UserController {
+public class ApiController {
+    private static final Logger LOGGER = LogManager.getLogger(ApiController.class.getName());
+
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("/users")
-    public ResponseEntity<List<User>> getAllUsers(@RequestParam(required = false) String userName) {
+    @GetMapping("getAllUsers")
+    public ResponseEntity<List<User>> getAllUsers() {
+        LOGGER.trace("Get all Users");
+
         try {
-            List<User> users = new ArrayList<>();
+            List<User> userList = new ArrayList<>();
 
-            if (userName == null) {
-                userRepository.findAll().forEach(users::add);
-            }
-            else {
-                userRepository.findByUserName(userName).forEach(users::add);
-            }
+            Iterable<User> userIterable = userRepository.findAll();
+            userIterable.forEach(userList::add);
 
-            if (users.isEmpty()) {
+            if (userList.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
 
-            return new ResponseEntity<>(users, HttpStatus.OK);
+            return new ResponseEntity<>(userList, HttpStatus.OK);
         }
         catch (Exception exception) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
