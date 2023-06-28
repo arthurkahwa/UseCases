@@ -1,4 +1,4 @@
-package de.chapter.mill.restservice;
+package de.chapter.mill;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
