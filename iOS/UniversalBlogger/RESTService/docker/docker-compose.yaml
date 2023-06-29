@@ -6,7 +6,7 @@ services:
     restart: always
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
     ports:
       - 5432:5432
@@ -16,7 +16,7 @@ services:
       - network
     volumes:
       - postgresvol:/var/lib/postgresql/data
-      - ./dbschema:/docker-entrypoint-initdb.d/
+      - ./postgres:/docker-entrypoint-initdb.d/
 
   pgadmin:
     container_name: pgadmin
@@ -24,7 +24,7 @@ services:
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_DEFAULT_PASSWORD: postgres
     ports:
       - 5050:80
 

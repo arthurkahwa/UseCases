@@ -1,6 +1,7 @@
 package de.chapter.mill.controller;
 
 import de.chapter.mill.entity.User;
+import de.chapter.mill.repository.PostRepository;
 import de.chapter.mill.repository.UserRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,6 +21,9 @@ public class ApiController {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    PostRepository postRepository;
 
     @GetMapping("users")
     public ResponseEntity<List<User>> getAllUsers() {
