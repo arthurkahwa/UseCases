@@ -7,13 +7,13 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "tbl_user")
+@Table(name = "tbluser")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_name")
+    @Column(name = "username")
     private String username;
 
     @Column(name = "email")
