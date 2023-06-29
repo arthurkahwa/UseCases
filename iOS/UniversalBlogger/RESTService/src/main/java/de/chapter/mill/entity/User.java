@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -18,6 +22,9 @@ public class User {
 
     @Column(name = "email")
     private String email;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private Set<Post> posts = new HashSet<Post>(0);
 
     public User(String username, String email) {
         this.username = username;

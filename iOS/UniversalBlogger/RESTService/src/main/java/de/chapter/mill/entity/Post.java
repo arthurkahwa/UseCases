@@ -19,12 +19,15 @@ public class Post {
     @Column(name = "body")
     private String body;
 
-    @Column(name = "userid")
-    private Long userid;
+    // @Column(name = "userid")
+    // private Long userid;
 
-    public Post(String title, String body, Long userid) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userid", nullable = false)
+    private User user;
+
+    public Post(String title, String body) {
         this.title = title;
         this.body = body;
-        this.userid = userid;
     }
 }
