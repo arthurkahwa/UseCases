@@ -1,5 +1,6 @@
 package de.chapter.mill.controller;
 
+import de.chapter.mill.entity.Post;
 import de.chapter.mill.entity.User;
 import de.chapter.mill.repository.PostRepository;
 import de.chapter.mill.repository.UserRepository;
@@ -14,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-// @CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/api")
 public class ApiController {
@@ -25,6 +25,18 @@ public class ApiController {
 
     @Autowired
     PostRepository postRepository;
+
+    @PostMapping("post")
+    public ResponseEntity<Post> createSinglePost(@RequestBody Post post) {
+        LOGGER.trace("Create a single Post");
+
+        try {
+
+        }
+        catch (Exception exception) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
     @GetMapping("user/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") Long id) {

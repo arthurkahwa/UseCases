@@ -19,9 +19,6 @@ public class Post {
     @Column(name = "body")
     private String body;
 
-    // @Column(name = "userid")
-    // private Long userid;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userid", nullable = false)
     private User user;
