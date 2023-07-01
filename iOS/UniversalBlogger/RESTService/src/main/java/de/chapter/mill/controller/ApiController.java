@@ -2,6 +2,7 @@ package de.chapter.mill.controller;
 
 import de.chapter.mill.entity.Post;
 import de.chapter.mill.entity.User;
+import de.chapter.mill.entity.UserPost;
 import de.chapter.mill.repository.PostRepository;
 import de.chapter.mill.repository.UserRepository;
 import org.apache.logging.log4j.LogManager;
@@ -50,7 +51,57 @@ public class ApiController {
         try {
             Post createdPost = postRepository.save(inputPost);
 
-                return new ResponseEntity<>(createdPost, HttpStatus.OK);
+            return new ResponseEntity<>(createdPost, HttpStatus.OK);
+        }
+        catch (Exception exception) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Transactional(rollbackFor = Exception.class, readOnly = true)
+    @GetMapping("post/{id}")
+    public ResponseEntity<Post> getPostById(@PathVariable Long id) {
+        LOGGER.trace("Get a single post using its id");
+
+        try {
+            Optional<Post> post = postRepository.findById(id);
+
+            return post.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
+                    .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        }
+        catch (Exception exception) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Transactional(rollbackFor = Exception.class, readOnly = true)
+    @GetMapping("posts")
+    public ResponseEntity<List<Post>> getAllPosts() {
+        LOGGER.trace("Get all posts");
+
+        try {
+            List<Post> postList = postRepository.findAll();
+
+            if (postList.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+
+            return new ResponseEntity<>(postList, HttpStatus.OK);
+        }
+        catch (Exception exception) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @DeleteMapping("post/{id}")
+    public ResponseEntity<HttpStatus> deletePostById(@PathVariable Long id) {
+        LOGGER.trace("Delete a single Post");
+
+        try {
+            postRepository.deleteById(id);
+
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         catch (Exception exception) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -67,6 +118,59 @@ public class ApiController {
 
             return user.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                     .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        }
+        catch (Exception exception) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @DeleteMapping("user/{id}")
+    public ResponseEntity<HttpStatus> deleteUserById(@PathVariable Long id) {
+        LOGGER.trace("Dele a single user");
+
+        try {
+            userRepository.deleteById(id);
+
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        catch (Exception exception) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @PutMapping("post/{id}")
+    public ResponseEntity<Post> updateSinglePost(@PathVariable("id") Long id,
+                                                 @RequestBody Post inputPost) {
+        LOGGER.trace("Update a single post");
+
+        try {
+            Optional<Post> outputPost = postRepository.findById(id);
+
+            if (outputPost.isPresent()) {
+                if (inputPost.equals(outputPost.get())) {
+                    return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
+                }
+                else {
+                    Post post = outputPost.get();
+                    post.setBody(inputPost.getBody());
+                    post.setTitle(inputPost.getTitle());
+
+                    Optional<User> user = userRepository.findById(inputPost.getUserId());
+                    if (user.isPresent()) {
+                        if (!(user.get().getId() == inputPost.getUserId())) {
+                            post.setUserId(inputPost.getUserId());
+                        }
+                    }
+
+                    return new ResponseEntity<>(postRepository.save(post), HttpStatus.OK);
+
+                }
+            }
+            else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
         }
         catch (Exception exception) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -112,6 +216,67 @@ public class ApiController {
             List<User> createdUserList = userRepository.saveAll(inputUsers);
 
             return new ResponseEntity<>(createdUserList, HttpStatus.OK);
+        }
+        catch (Exception exception) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Transactional(rollbackFor = Exception.class, readOnly = true)
+    @GetMapping("user/posts/{id}")
+    public ResponseEntity<UserPost> getSingleUserWithPosts(@PathVariable("id") Long id) {
+        try {
+            LOGGER.trace("Get a user with all their posts");
+            Optional<User> optionalUserObject = userRepository.findById(id);
+
+            if (optionalUserObject.isPresent()) {
+                List<Post> userPosts = postRepository.findAllByUserId(id);
+
+                User user = optionalUserObject.get();
+                UserPost userWithPosts = new UserPost(user.getId(), user.getUsername(), user.getEmail(), userPosts);
+
+                return new ResponseEntity<>(userWithPosts, HttpStatus.OK);
+            }
+            else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        }
+        catch (Exception exception) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    /**
+     * Get a list of all the users with corresponding posts.
+     *
+     * @return userList
+     */
+    @Transactional(rollbackFor = Exception.class, readOnly = true)
+    @GetMapping("users/posts")
+    public ResponseEntity<List<UserPost>> getAllUsersAndPosts() {
+        LOGGER.trace("List all users and corresponding posts");
+
+        try {
+            List<User> userList = new ArrayList<>(userRepository.findAll());
+
+            if (userList.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+
+            List<UserPost> userPostList = new ArrayList<>();
+
+            userList.forEach(user -> {
+                List<Post> postList = postRepository.findAllByUserId(user.getId());
+
+                UserPost userWithPosts = new UserPost(user.getId(),
+                                                      user.getUsername(),
+                                                      user.getEmail(),
+                                                      postList);
+
+                userPostList.add(userWithPosts);
+            });
+
+            return new ResponseEntity<>(userPostList, HttpStatus.OK);
         }
         catch (Exception exception) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

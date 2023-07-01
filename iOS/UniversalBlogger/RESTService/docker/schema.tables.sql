@@ -14,7 +14,7 @@ create table tblpost
             primary key,
     userid integer not null
         constraint tblpost_tbluser_id_fk
-            references tbluser,
+            references tbluser on delete cascade on update cascade,
     title    varchar not null,
     body     varchar not null
 );

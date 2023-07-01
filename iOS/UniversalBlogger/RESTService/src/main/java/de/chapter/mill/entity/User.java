@@ -1,16 +1,18 @@
 package de.chapter.mill.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-import java.util.List;
-
+/**
+ * User Entity
+ * Represents the <strong>tblUser</strong> database table
+ */
 @Entity
 @Data
 @NoArgsConstructor
-@ToString
+@AllArgsConstructor
 @Table(name = "tbluser")
 public class User {
     @Id
