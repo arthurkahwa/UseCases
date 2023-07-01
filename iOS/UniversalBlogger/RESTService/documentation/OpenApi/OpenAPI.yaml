@@ -4,6 +4,6 @@ info:
   description: UniversalBlogger REST API. This meant to be the only interface to the backing database. All data is retrieved and entered here.
   version: 1.0.0
 servers:
-  - url: 'https'
+  - url: 'http://localhost:8080/api'
 paths:
   
