@@ -15,8 +15,6 @@ tags:
     description: The user who wrote the posts
   - name: post
     description: The posts created by the user
-  - name: userPosts
-    description: A list of users together with corresponding posts.
 paths:
   /user:
     post:
@@ -38,43 +36,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
-  /users:
-    post:
-      tags:
-        - user
-      summary: create a group of users
-      description: Creates a group of entries for singles user in the database
-      operationId: createMultipleUsers
-      requestBody:
-        description: create user objects
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/User'
-      responses:
-        default:
-          description: successfully created user
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-    get:
-      tags:
-        - user
-      summary: Get a group of users
-      description: Get a group of entries for singles user in the database
-      operationId: getAllUsers
-      responses:
-        default:
-          description: successfully found user group
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/User'
   /user/{id}:
     get:
       tags:
@@ -139,7 +100,165 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
-
+  /user/post/{id}:
+    get:
+      tags:
+        - user
+      summary: get a single user with  their posts
+      description: Get an entry for a single user with posts
+      operationId: getSingleUserWithPosts
+      parameters:
+        - name: id
+          in: path
+          description: ID of user to find
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        default:
+          description: successfully derived user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserPost'
+  /users:
+    post:
+      tags:
+        - user
+      summary: create a group of users
+      description: Creates a group of entries for singles user in the database
+      operationId: createMultipleUsers
+      requestBody:
+        description: create user objects
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/User'
+      responses:
+        default:
+          description: successfully created user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    get:
+      tags:
+        - user
+      summary: Get a group of users
+      description: Get a group of entries for singles user in the database
+      operationId: getAllUsers
+      responses:
+        default:
+          description: successfully found user group
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+  /users/posts:
+    get:
+      tags:
+        - user
+      summary: Get a group of users with posts
+      description: Get a group of entries for users and their posts
+      operationId: getAllUsersAndPosts
+      responses:
+        default:
+          description: successfully found user group and posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserPost'
+  /post:
+    post:
+      tags:
+        - post
+      summary: create a single post
+      description: Creates an entry for a single post in the database
+      operationId: createSinglePost
+      requestBody:
+        description: create post object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        default:
+          description: successfully created post
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+  /post/{id}:
+    get:
+      tags:
+        - post
+      summary: Get single post
+      description: Get the details to a single post by user id
+      operationId: getSinglePost
+      parameters:
+        - name: id
+          in: path
+          description: ID of post to find
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        default:
+          description: successfully found post
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+    put:
+      tags:
+        - post
+      summary: Update single post
+      description: Update the details to a single post by id
+      operationId: updatePostById
+      parameters:
+        - name: id
+          in: path
+          description: ID of post to update
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        default:
+          description: successfully updated post
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+    delete:
+      tags:
+        - post
+      summary: delete single user
+      description: Delete a single post by id
+      operationId: deleteSinglePost
+      parameters:
+        - name: id
+          in: path
+          description: ID of post to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        default:
+          description: successfully deleted post
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
 components:
   schemas:
     User:
