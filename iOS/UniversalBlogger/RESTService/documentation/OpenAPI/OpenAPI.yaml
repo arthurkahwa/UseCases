@@ -143,6 +143,8 @@ paths:
           content:
             application/json:
               schema:
+                type: array
+                items:
                 $ref: '#/components/schemas/User'
     get:
       tags:
@@ -259,6 +261,45 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Post'
+  /posts:
+    post:
+      tags:
+        - post
+      summary: create a group of posts
+      description: Creates a group of entries for  posts in the database
+      operationId: createMultiplePosts
+      requestBody:
+        description: create post objects
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Post'
+      responses:
+        default:
+          description: successfully created posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
+    get:
+      tags:
+        - post
+      summary: Get a group of posts
+      description: Get a group of entries for posts in the database
+      operationId: getAllPosts
+      responses:
+        default:
+          description: successfully found post group
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
 components:
   schemas:
     User:
@@ -304,3 +345,4 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Post'
+          
