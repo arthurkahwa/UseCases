@@ -20,7 +20,7 @@ struct PostListView: View {
                          id: \.self,
                          selection: $selectedPost) { post in
                         Text(post.title)
-                            .font(.subheadline)
+                            .font(.title)
                     }
                 }
             }

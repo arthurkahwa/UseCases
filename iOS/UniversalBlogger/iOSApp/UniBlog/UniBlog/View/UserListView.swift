@@ -21,16 +21,12 @@ struct UserListView: View {
             }
             else {
                 VStack(alignment: .leading) {
-                    Text("User List")
-                        .font(.title)
-                        .padding()
-                    
                     List(viewModel.userList,
                          id: \.self,
                          selection: $selectedUser) { user in
                         VStack {
                             Text(user.username)
-                                .font(.headline)
+                                .font(.title)
                         }
                     }
                 }

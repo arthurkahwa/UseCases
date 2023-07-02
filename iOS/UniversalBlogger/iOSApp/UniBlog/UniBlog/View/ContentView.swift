@@ -22,7 +22,7 @@ struct ContentView: View {
             PostListView(selectedUser: $selectedUser,
                          selectedPost: $selectedPost)
         } detail: {
-            PostDetailView()
+            PostDetailView(selectedPost: $selectedPost)
         }
         .environmentObject(viewModel)
 
