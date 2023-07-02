@@ -8,6 +8,10 @@
 import Foundation
 
 class Service {
+    static let shared = Service()
+    
+    private init() {}
+    
     func Download(from path: String) async -> Result<Data, AppError> {
         
         guard let url = URL(string: path)
@@ -40,9 +44,9 @@ class Service {
         return .failure(.generalError("Unspecified Error"))
     }
     
-    func DataOperation<Element: Encodable>(on path: String,
+    func DataOperation<Element: Codable>(on path: String,
                                            using method: HttpMethod,
-                                           with requestBody: Element? = nil) async -> Result<Data, AppError> {
+                                           with requestBody: Element? = nil) async -> Result<Element, AppError> {
         
         guard let url = URL(string: path)
         else {
@@ -70,7 +74,8 @@ class Service {
                 let statusCode = httpResponse.statusCode
                 
                 if statusCode >= 200 && statusCode < 300 {
-                    return .success(data)
+                    let result = try JSONDecoder().decode(Element.self, from: data)
+                    return .success(result)
                 }
             }
             else {
