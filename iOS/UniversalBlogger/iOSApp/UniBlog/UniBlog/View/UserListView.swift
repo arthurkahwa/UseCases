@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserListView: View {
     @EnvironmentObject var viewModel: ViewModel
-    @Binding var selectedUser: User?
+    @Binding var selectedUser: UserPost?
     
     var body: some View {
         ZStack {
@@ -25,7 +25,9 @@ struct UserListView: View {
                         .font(.title)
                         .padding()
                     
-                    List(viewModel.userList, id: \.id, selection: $selectedUser) { user in
+                    List(viewModel.userList,
+                         id: \.self,
+                         selection: $selectedUser) { user in
                         VStack {
                             Text(user.username)
                                 .font(.headline)
@@ -43,6 +45,9 @@ struct UserListView: View {
 struct UserListView_Previews: PreviewProvider {
     
     static var previews: some View {
-        UserListView(selectedUser: .constant(User(id: 42, username: "PreviewUserName", email: "preview@mail.local")))
+        UserListView(selectedUser: .constant(UserPost(id: 32,
+                                                      username: "preview user",
+                                                      email: "some@mail.local",
+                                                      posts: [])))
     }
 }

@@ -93,6 +93,20 @@ public class ApiController {
         }
     }
 
+    @Transactional(rollbackFor = Exception.class, readOnly = true)
+    @GetMapping("posts/{userId}")
+    public ResponseEntity<List<Post>> getAllPostsForUser(@PathVariable Long userId) {
+        LOGGER.trace("Get Posts for User with id");
+        try {
+            List<Post> postList = new ArrayList<>(postRepository.findAllByUserId(userId));
+
+            return new ResponseEntity<>(postList, HttpStatus.OK);
+        }
+        catch (Exception exception) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @Transactional(rollbackFor = Exception.class)
     @DeleteMapping("post/{id}")
     public ResponseEntity<HttpStatus> deletePostById(@PathVariable Long id) {

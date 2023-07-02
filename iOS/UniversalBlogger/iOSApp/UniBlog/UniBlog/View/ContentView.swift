@@ -11,14 +11,16 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @StateObject private var viewModel = ViewModel()
-    @State private var selectedUser: User?
+    @State private var selectedUser: UserPost?
+    @State private var selectedPost: Post?
 
     var body: some View {
         NavigationSplitView {
             UserListView(selectedUser: $selectedUser)
                 .navigationTitle("User List")
         } content: {
-            PostListView()
+            PostListView(selectedUser: $selectedUser,
+                         selectedPost: $selectedPost)
         } detail: {
             PostDetailView()
         }
