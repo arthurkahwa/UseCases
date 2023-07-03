@@ -16,5 +16,7 @@ It is comprised of the following parts:
 ## Usage
 * Start the docker container with ```docker-compose up``` on the command line in the folder with the docker-compose.yanl file.
 * Use PGAdmin to create the database tables
-* Use a Http Client like Postman to first enter the User data then the Post data.
+* Start the REST service with ```./mvnw clean spring-boot:run ``` in the root source code folder
+* Use the postman collection in the ```documentation``` folder to test the setup
+* Use Postman to first import the User sample data json file then the Post sample data json.
   * See the OpenAPI Document for the endpoints.
