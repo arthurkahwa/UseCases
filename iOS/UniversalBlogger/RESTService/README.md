@@ -14,5 +14,6 @@ It is comprised of the following parts:
   * REST Service OpenAPI specification
 
 ## Usage
+* Start the docker container with ```docker-compose up``` on the command line in the folder with the docker-compose.yanl file.
 * Use PGAdmin to create the database tables
 * Use a Http Client like Postman to first enter the User data tthen the Post data
