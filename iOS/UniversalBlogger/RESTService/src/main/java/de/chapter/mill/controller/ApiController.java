@@ -202,7 +202,9 @@ public class ApiController {
                  return new ResponseEntity<>(HttpStatus.NO_CONTENT);
              }
 
-             return new ResponseEntity<>(userList, HttpStatus.OK);
+             ResponseEntity<List<User>> foundUsers =  new ResponseEntity<>(userList, HttpStatus.OK);
+
+             return foundUsers;
          }
          catch (Exception exception) {
              return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
