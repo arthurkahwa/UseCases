@@ -153,6 +153,7 @@ public class ApiController {
         }
     }
 
+    /*
     @Transactional(rollbackFor = Exception.class)
     @PutMapping("post/{id}")
     public ResponseEntity<Post> updateSinglePost(@PathVariable("id") Long id,
@@ -190,6 +191,7 @@ public class ApiController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+     */
 
     @Transactional(rollbackFor = Exception.class, readOnly = true)
     @GetMapping("users")
