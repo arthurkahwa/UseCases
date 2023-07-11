@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const jwt = require('jsonwebtoken');
+const jsonwebtoken = require('jsonwebtoken');
 const router = express.Router();
 
 // Body parser to parse json
@@ -14,7 +14,7 @@ const users = [
 ];
 
 // The login route
-router.post('/login', (request,response) => {
+router.post('/login', (request, response) => {
     const username = request.body.username;
     const password = request.body.password;
 
@@ -26,7 +26,7 @@ router.post('/login', (request,response) => {
         response.json({message: 'Authentication Failed.', success: false});
     }
 
-    const token = jwt.sign({username: username}, "SECRET_KEY");
+    const token = jsonwebtoken.sign({username: username}, "ABC123");
     if (!token) {
         response.json({message: 'Authentication Failed.', success: false});
     }
