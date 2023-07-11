@@ -1,7 +1,7 @@
-var express = require('express');
+const express = require('express');
 const app = express();
 const jwt = require('jsonwebtoken');
-var router = express.Router();
+const router = express.Router();
 
 // Body parser to parse json
 app.use(express.json());
