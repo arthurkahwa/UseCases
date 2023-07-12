@@ -18,10 +18,12 @@ struct ContentView: View {
                     HStack {
                         Spacer()
                         
-                        Image(systemName: "lock.open.fill")
+                        Image(systemName: loginViewModel.userIsAuthenticated ?
+                              "lock.fill" : "lock.open.fill")
                             .resizable()
-                            .frame(width: 64, height: 64, alignment: .leading)
-                            .foregroundColor(.red)
+                            .frame(width: 64, height: 72, alignment: .leading)
+                            .foregroundColor(loginViewModel.userIsAuthenticated ?
+                                .green : .red)
                         .padding()
                         
                         Spacer()
@@ -30,7 +32,8 @@ struct ContentView: View {
                     HStack {
                         Spacer()
                         
-                        Text("Not logged in.")
+                        Text(loginViewModel.userIsAuthenticated ?
+                             "Logged in." : "Not logged in.")
                             .font(.largeTitle)
                         
                         Spacer()

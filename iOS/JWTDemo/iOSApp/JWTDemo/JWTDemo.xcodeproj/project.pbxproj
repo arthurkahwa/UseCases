@@ -16,6 +16,7 @@
 		8E7FC1A82A5ED1CB000F8068 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FC1A72A5ED1CB000F8068 /* LoginRequestModel.swift */; };
 		8E7FC1AA2A5ED925000F8068 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FC1A92A5ED925000F8068 /* LoginResponseModel.swift */; };
 		8E7FC1AD2A5EDCFE000F8068 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FC1AC2A5EDCFE000F8068 /* LoginViewModel.swift */; };
+		8E7FC1AF2A5EFE76000F8068 /* UserDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FC1AE2A5EFE76000F8068 /* UserDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8E7FC1A72A5ED1CB000F8068 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
 		8E7FC1A92A5ED925000F8068 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		8E7FC1AC2A5EDCFE000F8068 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8E7FC1AE2A5EFE76000F8068 /* UserDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				8E7FC1A72A5ED1CB000F8068 /* LoginRequestModel.swift */,
 				8E7FC1A92A5ED925000F8068 /* LoginResponseModel.swift */,
+				8E7FC1AE2A5EFE76000F8068 /* UserDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				8E7FC1AA2A5ED925000F8068 /* LoginResponseModel.swift in Sources */,
 				8E7FC1932A5EC9ED000F8068 /* ContentView.swift in Sources */,
 				8E7FC1A82A5ED1CB000F8068 /* LoginRequestModel.swift in Sources */,
+				8E7FC1AF2A5EFE76000F8068 /* UserDetailModel.swift in Sources */,
 				8E7FC1912A5EC9ED000F8068 /* JWTDemoApp.swift in Sources */,
 				8E7FC1A22A5ECAD9000F8068 /* APIService.swift in Sources */,
 				8E7FC1A02A5ECA19000F8068 /* AppError.swift in Sources */,

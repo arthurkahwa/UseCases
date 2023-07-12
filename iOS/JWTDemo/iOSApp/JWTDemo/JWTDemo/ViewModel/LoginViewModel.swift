@@ -11,12 +11,15 @@ import Foundation
 class LoginViewModel: ObservableObject {
     var username = ""
     var password = ""
+    let userDefaults = UserDefaults.standard
+    @Published var userIsAuthenticated = false
     
     func login() {
         Task {
             switch await ApiService().login(with: username, and: password) {
             case .success(let token):
-                print(token)
+                userDefaults.setValue(token, forKey: "jsonWebToken")
+                userIsAuthenticated = true
                 
             case .failure(let error):
                 print(String(describing: error))

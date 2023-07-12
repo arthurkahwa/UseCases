@@ -8,7 +8,7 @@
 import Foundation
 
 struct LoginResponse: Codable {
-    let tomen: String?
+    let token: String?
     let message: String?
     let success: Bool
 }

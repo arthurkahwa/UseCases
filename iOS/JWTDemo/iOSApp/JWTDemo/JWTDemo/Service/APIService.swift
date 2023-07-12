@@ -23,7 +23,8 @@ actor ApiService {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         do {
-            request.httpBody = try JSONEncoder().encode(requestBody)
+            let body = try JSONEncoder().encode(requestBody)
+            request.httpBody = body
             let (data, response) = try await URLSession.shared.data(for: request)
             
             if let response = response as? HTTPURLResponse,
@@ -34,7 +35,7 @@ actor ApiService {
                     return .failure(.loginError(message: "Invalid login attempt"))
                 }
                 
-                guard let token = loginResponse.tomen
+                guard let token = loginResponse.token
                 else {
                     return .failure(.missingToken)
                 }
