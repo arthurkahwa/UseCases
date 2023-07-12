@@ -15,6 +15,7 @@
 		8E7FC1A22A5ECAD9000F8068 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FC1A12A5ECAD9000F8068 /* APIService.swift */; };
 		8E7FC1A82A5ED1CB000F8068 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FC1A72A5ED1CB000F8068 /* LoginRequestModel.swift */; };
 		8E7FC1AA2A5ED925000F8068 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FC1A92A5ED925000F8068 /* LoginResponseModel.swift */; };
+		8E7FC1AD2A5EDCFE000F8068 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FC1AC2A5EDCFE000F8068 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8E7FC1A12A5ECAD9000F8068 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		8E7FC1A72A5ED1CB000F8068 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
 		8E7FC1A92A5ED925000F8068 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
+		8E7FC1AC2A5EDCFE000F8068 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		8E7FC18F2A5EC9ED000F8068 /* JWTDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8E7FC1AB2A5EDCE3000F8068 /* ViewModel */,
 				8E7FC1A62A5ED1B0000F8068 /* Model */,
 				8E7FC1A52A5ED19E000F8068 /* View */,
 				8E7FC1A42A5ED188000F8068 /* Enum */,
@@ -111,6 +114,14 @@
 				8E7FC1A92A5ED925000F8068 /* LoginResponseModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8E7FC1AB2A5EDCE3000F8068 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8E7FC1AC2A5EDCFE000F8068 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 				8E7FC1912A5EC9ED000F8068 /* JWTDemoApp.swift in Sources */,
 				8E7FC1A22A5ECAD9000F8068 /* APIService.swift in Sources */,
 				8E7FC1A02A5ECA19000F8068 /* AppError.swift in Sources */,
+				8E7FC1AD2A5EDCFE000F8068 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
