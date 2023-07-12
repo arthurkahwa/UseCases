@@ -10,8 +10,8 @@ import Foundation
 struct UserDetail: Codable, Identifiable, Hashable {
   struct Address: Codable, Hashable {
     struct Geo: Codable, Hashable {
-      let lat: String
-      let lng: String
+      let lat: Double
+      let lng: Double
     }
 
     let street: String
