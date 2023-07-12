@@ -122,11 +122,9 @@ function authenticate(request, response, next) {
 
     const decoded = jsonWebToken.verify(token, SECRET_KEY);
     const username = decoded.username;
-    const password = decoded.password;
 
-    const authenticatedUser = users.find(user => {
-        return user.username === username && user.password === password;
-    });
+    const authenticatedUser =
+        users.find(user => user.username === username);
 
     if (!authenticatedUser) {
         response.json({message: 'Authentication Failed.', success: false});
@@ -134,7 +132,7 @@ function authenticate(request, response, next) {
 
     next();
 }
-router.get('/accounts', (request, response) => {
+router.get('/accounts', authenticate, (request, response) => {
     response.json(accounts);
 });
 
