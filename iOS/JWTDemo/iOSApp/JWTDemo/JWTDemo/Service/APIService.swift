@@ -8,6 +8,8 @@
 import Foundation
 
 actor ApiService {
+    let urlSession = URLSession.shared
+    
     func login(with username: String, and password: String) async -> Result<String, AppError> {
         let loginUri = "http://localhost:3000/api/login"
         
@@ -25,7 +27,7 @@ actor ApiService {
         do {
             let body = try JSONEncoder().encode(requestBody)
             request.httpBody = body
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await urlSession.data(for: request)
             
             if let response = response as? HTTPURLResponse,
                 response.statusCode == 200 {
@@ -47,7 +49,35 @@ actor ApiService {
             }
         }
         catch {
-            return .failure(.encodingError(error: String(describing: error)))
+            return .failure(.exception(description: String(describing: error)))
+        }
+    }
+    
+    func findAllAccounts(using token: String) async -> Result<[UserDetail], AppError> {
+        let uri = "http://localhost:3000/api/accounts"
+        guard let url = URL(string: uri)
+        else {
+            return .failure(.badUrl)
+        }
+        
+        do {
+            let (data, response) = try await urlSession.data(from: url)
+            
+            guard let response = response as? HTTPURLResponse,
+                  response.statusCode == 200
+            else {
+                return .failure(.badResponse)
+            }
+            
+            let accounts = try JSONDecoder().decode([UserDetail].self, from: data)
+            if accounts.isEmpty {
+                return .failure(.generalError(description: "No user details found"))
+            }
+            
+            return .success(accounts)
+        }
+        catch {
+            return .failure(.exception(description: String(describing: error)))
         }
     }
 }

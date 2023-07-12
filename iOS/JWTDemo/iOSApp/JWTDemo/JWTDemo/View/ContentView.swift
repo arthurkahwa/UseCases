@@ -11,67 +11,92 @@ struct ContentView: View {
     @StateObject private var loginViewModel = LoginViewModel()
     
     var body: some View {
-        Form {
-            Section("") {
-                VStack {
-                    
-                    HStack {
-                        Spacer()
+        NavigationStack {
+            Form {
+                Section("") {
+                    VStack {
                         
-                        Image(systemName: loginViewModel.userIsAuthenticated ?
-                              "lock.fill" : "lock.open.fill")
+                        HStack {
+                            Spacer()
+                            
+                            Image(systemName: loginViewModel.userIsAuthenticated ?
+                                  "lock.fill" : "lock.open.fill")
                             .resizable()
                             .frame(width: 64, height: 72, alignment: .leading)
                             .foregroundColor(loginViewModel.userIsAuthenticated ?
-                                .green : .red)
+                                .green : .orange)
+                            .padding()
+                            
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            
+                            Text(loginViewModel.userIsAuthenticated ?
+                                 "Logged in." : "Not logged in.")
+                            .font(.largeTitle)
+                            
+                            Spacer()
+                        }
+                    }
+                }
+                
+                if !loginViewModel.userIsAuthenticated {
+                    Section {
+                        VStack {
+                            TextField("Username", text: $loginViewModel.username)
+                                .font(.title)
+                            
+                            SecureField("Password", text: $loginViewModel.password)
+                                .font(.title)
+                        }
+                    }
+                }
+                else {
+                    Section {
+                        NavigationLink {
+                            UserListView()
+                        } label: {
+                            Button {}
+                            label: {
+                                Text("Find Users")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .padding()
+                            }
+                        }
+                    }
+                }
+                
+                Section {
+                    HStack {
+                        Spacer()
+                        
+                        Button {
+                            if !loginViewModel.userIsAuthenticated {
+                                loginViewModel.login()
+                            }
+                            
+                            loginViewModel.logout()
+                        } label: {
+                            Text(loginViewModel.userIsAuthenticated ?
+                                 "Logout" : "Login")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding()
+                        }
+                        .frame(width: 160, height: 58, alignment: .center)
+                        .foregroundColor(.white)
+                        .background(loginViewModel.userIsAuthenticated ?
+                            .orange : .cyan)
                         .padding()
                         
                         Spacer()
                     }
-                    
-                    HStack {
-                        Spacer()
-                        
-                        Text(loginViewModel.userIsAuthenticated ?
-                             "Logged in." : "Not logged in.")
-                            .font(.largeTitle)
-                        
-                        Spacer()
-                    }
-                }
-            }
-            
-            Section {
-                VStack {
-                    TextField("Username", text: $loginViewModel.username)
-                        .font(.title)
-                    
-                    SecureField("Password", text: $loginViewModel.password)
-                        .font(.title)
-                }
-            }
-            
-            Section {
-                HStack {
-                    Spacer()
-                    
-                    Button {
-                        loginViewModel.login()
-                    } label: {
-                        Text("Login")
-                            .font(.title)
-                            .padding()
-                    }
-                    .frame(width: 160, height: 58, alignment: .center)
-                    .foregroundColor(.white)
-                    .background(.cyan)
-                    .padding()
-                    
-                    Spacer()
                 }
             }
         }
-        .padding()
     }
 }
 
