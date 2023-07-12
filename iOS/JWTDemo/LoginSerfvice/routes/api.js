@@ -108,6 +108,7 @@ router.post('/login', (request, response) => {
 });
 
 // Get accounts after authentication
+// Middleware to authenticate the request
 function authenticate(request, response, next) {
     const authorizationFlag = request.headers['authorization'];
 
