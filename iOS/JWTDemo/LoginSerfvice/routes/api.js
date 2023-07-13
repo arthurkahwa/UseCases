@@ -26,8 +26,8 @@ const accounts = [
             city: 'Gwenborough',
             zipcode: '92998-3874',
             geo: {
-                lat: -37.3159,
-                lng: 81.1496
+                lat: 40.741895,
+                lng: -73.989308
             }
         },
         phone: '1-770-736-8031 x56442',
@@ -49,8 +49,8 @@ const accounts = [
             city: 'Wisokyburgh',
             zipcode: '90566-7771',
             geo: {
-                lat: -43.9509,
-                lng: -34.4618
+                lat: 6.032334136094421,
+                lng: 11.333315288898135
             }
         },
         phone: '010-692-6593 x09125',
@@ -72,8 +72,8 @@ const accounts = [
             city: 'McKenziehaven',
             zipcode: '59590-4157',
             geo: {
-                lat: -68.6102,
-                lng: -47.0653
+                lat:  -8.505999,
+                lng: -35.000868
             }
         },
         phone: '1-463-123-4447',

@@ -23,10 +23,7 @@ struct UserListView: View {
             }
             .navigationTitle("Users")
         } detail: {
-            ProgressView {
-                Text("Comming Soon")
-                    .font(.largeTitle)
-            }
+            UserDetailView(selectedUser: $selectedUser)
         }
         .task {
             await viewModel.findAllUserAccounts()
