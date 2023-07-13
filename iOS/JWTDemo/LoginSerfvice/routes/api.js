@@ -72,7 +72,7 @@ const accounts = [
             city: 'McKenziehaven',
             zipcode: '59590-4157',
             geo: {
-                lat:  -8.505999,
+                lat: -8.505999,
                 lng: -35.000868
             }
         },
@@ -133,6 +133,7 @@ function authenticate(request, response, next) {
 
     next();
 }
+
 router.get('/accounts', authenticate, (request, response) => {
     response.json(accounts);
 });
