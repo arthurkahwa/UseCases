@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// TODO: Refactor me to Generics
 actor ApiService {
     let urlSession = URLSession.shared
     
@@ -53,7 +54,7 @@ actor ApiService {
         }
     }
     
-    func findAllAccounts(using token: String) async -> Result<[UserDetail], AppError> {
+    func findUserAccounts(using token: String) async -> Result<[UserDetail], AppError> {
         let uri = "http://localhost:3000/api/accounts"
         guard let url = URL(string: uri)
         else {
@@ -61,7 +62,12 @@ actor ApiService {
         }
         
         do {
-            let (data, response) = try await urlSession.data(from: url)
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
+            let (data, response) = try await urlSession.data(for: request)
             
             guard let response = response as? HTTPURLResponse,
                   response.statusCode == 200

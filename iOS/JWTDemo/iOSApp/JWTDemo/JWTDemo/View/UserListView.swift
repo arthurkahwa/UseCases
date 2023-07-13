@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct UserListView: View {
+    @EnvironmentObject private var viewModel: ViewModel
+    @State private var selectedUser: UserDetail?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationSplitView {
+            VStack {
+                List(viewModel.userAccounts,
+                     id: \.self,
+                     selection: $selectedUser) { user in
+                    Text(user.name)
+                        .font(.subheadline)
+                }
+            }
+            .navigationTitle("Users")
+        } detail: {
+            ProgressView {
+                Text("Comming Soon")
+                    .font(.largeTitle)
+            }
+        }
+        .task {
+            await viewModel.findAllUserAccounts()
+        }
     }
 }
 

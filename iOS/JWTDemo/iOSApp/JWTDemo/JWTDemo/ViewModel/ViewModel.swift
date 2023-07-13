@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-class LoginViewModel: ObservableObject {
+class ViewModel: ObservableObject {
     var username = ""
     var password = ""
     let userDefaults = UserDefaults.standard
@@ -33,16 +33,15 @@ class LoginViewModel: ObservableObject {
         
     }
     
-    func findAllUserAccounts() {
-        Task {
-            if let token = userDefaults.string(forKey: TOKEN_KEY) {
-                switch await ApiService().findAllAccounts(using: token) {
-                case .success(let accounts):
-                    userAccounts = accounts
-                    
-                case .failure(let error):
-                    print(String(describing: error))
-                }
+    func findAllUserAccounts() async {
+        if let token = userDefaults.string(forKey: TOKEN_KEY) {
+            switch await ApiService().findUserAccounts(using: token) {
+            case .success(let accounts):
+                userAccounts = accounts
+                print(String(describing: userAccounts))
+                
+            case .failure(let error):
+                print(String(describing: error))
             }
         }
     }

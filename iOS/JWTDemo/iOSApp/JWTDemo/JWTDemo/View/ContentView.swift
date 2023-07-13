@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var loginViewModel = LoginViewModel()
+    @StateObject private var viewModel = ViewModel()
     
     var body: some View {
         NavigationStack {
@@ -19,11 +19,11 @@ struct ContentView: View {
                         HStack {
                             Spacer()
                             
-                            Image(systemName: loginViewModel.userIsAuthenticated ?
+                            Image(systemName: viewModel.userIsAuthenticated ?
                                   "lock.fill" : "lock.open.fill")
                             .resizable()
                             .frame(width: 64, height: 72, alignment: .leading)
-                            .foregroundColor(loginViewModel.userIsAuthenticated ?
+                            .foregroundColor(viewModel.userIsAuthenticated ?
                                 .green : .orange)
                             .padding()
                             
@@ -33,7 +33,7 @@ struct ContentView: View {
                         HStack {
                             Spacer()
                             
-                            Text(loginViewModel.userIsAuthenticated ?
+                            Text(viewModel.userIsAuthenticated ?
                                  "Logged in." : "Not logged in.")
                             .font(.largeTitle)
                             
@@ -42,13 +42,13 @@ struct ContentView: View {
                     }
                 }
                 
-                if !loginViewModel.userIsAuthenticated {
+                if !viewModel.userIsAuthenticated {
                     Section {
                         VStack {
-                            TextField("Username", text: $loginViewModel.username)
+                            TextField("Username", text: $viewModel.username)
                                 .font(.title)
                             
-                            SecureField("Password", text: $loginViewModel.password)
+                            SecureField("Password", text: $viewModel.password)
                                 .font(.title)
                         }
                     }
@@ -74,13 +74,13 @@ struct ContentView: View {
                         Spacer()
                         
                         Button {
-                            if !loginViewModel.userIsAuthenticated {
-                                loginViewModel.login()
+                            if !viewModel.userIsAuthenticated {
+                                viewModel.login()
                             }
                             
-                            loginViewModel.logout()
+                            viewModel.logout()
                         } label: {
-                            Text(loginViewModel.userIsAuthenticated ?
+                            Text(viewModel.userIsAuthenticated ?
                                  "Logout" : "Login")
                             .font(.title)
                             .fontWeight(.bold)
@@ -88,7 +88,7 @@ struct ContentView: View {
                         }
                         .frame(width: 160, height: 58, alignment: .center)
                         .foregroundColor(.white)
-                        .background(loginViewModel.userIsAuthenticated ?
+                        .background(viewModel.userIsAuthenticated ?
                             .orange : .cyan)
                         .padding()
                         
@@ -97,6 +97,7 @@ struct ContentView: View {
                 }
             }
         }
+        .environmentObject(viewModel)
     }
 }
 
