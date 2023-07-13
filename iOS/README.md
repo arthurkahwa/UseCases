@@ -1,5 +1,17 @@
 # iOS SwiftUI Use Cases
 
+## JWT Demo
+Demonstrates using JWT to authenticate an iOS User and give them access to restricted resources.
+Uses:
+* REST service in ```express.js```
+* Swift actors
+* MapKit in SwiftUI
+
+## Universal Blogger
+The moving parts of a simple blogging app
+* SpringBoot Backend providing REST function
+* SwiftUI front end
+
 ## async-await with JSONDecoder
 A demonstration of asynchronous network calls using: 
 * _*async - await*_ pattern
@@ -24,7 +36,3 @@ Demonstrated are:
 * _CoreData_ Data Deletion
 * Use of global environment variables
 
-## Universal Blogger
-The moving parts of a simple blogging app
-* SpringBoot Backend providing REST function
-* SwiftUI front end
