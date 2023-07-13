@@ -74,11 +74,13 @@ struct ContentView: View {
                         Spacer()
                         
                         Button {
-                            if !viewModel.userIsAuthenticated {
+                            if viewModel.userIsAuthenticated {
+                                viewModel.logout()
+                                
+                            }
+                            else {
                                 viewModel.login()
                             }
-                            
-                            viewModel.logout()
                         } label: {
                             Text(viewModel.userIsAuthenticated ?
                                  "Logout" : "Login")
@@ -96,8 +98,10 @@ struct ContentView: View {
                     }
                 }
             }
+            .padding()
         }
         .environmentObject(viewModel)
+        .padding()
     }
 }
 

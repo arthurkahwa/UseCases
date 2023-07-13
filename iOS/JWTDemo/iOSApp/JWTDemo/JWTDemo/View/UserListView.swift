@@ -18,7 +18,7 @@ struct UserListView: View {
                      id: \.self,
                      selection: $selectedUser) { user in
                     Text(user.name)
-                        .font(.subheadline)
+                        .font(.title3)
                 }
             }
             .navigationTitle("Users")

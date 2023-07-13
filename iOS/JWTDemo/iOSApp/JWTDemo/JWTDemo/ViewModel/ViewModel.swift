@@ -9,8 +9,8 @@ import Foundation
 
 @MainActor
 class ViewModel: ObservableObject {
-    var username = ""
-    var password = ""
+    @Published var username = ""
+    @Published var password = ""
     let userDefaults = UserDefaults.standard
     let TOKEN_KEY = "jsonWebToken"
     @Published var userIsAuthenticated = false
@@ -30,7 +30,11 @@ class ViewModel: ObservableObject {
     }
     
     func logout() {
+        username = ""
+        password = ""
         
+        userDefaults.removeObject(forKey: TOKEN_KEY)
+        userIsAuthenticated = false
     }
     
     func findAllUserAccounts() async {
