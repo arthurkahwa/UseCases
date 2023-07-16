@@ -11,6 +11,7 @@ const websocket = require('ws');
 const moment = require('moment');
 const uuid = require('uuid');
 const {json} = require("express");
+const repl = require("repl");
 
 /**
  * Initialize the web socket server
@@ -36,16 +37,20 @@ webSocketServer.on('connection', socket => {
     // socket.send(`${timestamp} - ${message}`);
 
     const payload = {
+      guid: uuid.v4(),
       timestamp: timestamp,
-      guid: uuid.v4()
+      received: `${message}`
     };
 
-    const reply = JSON.stringify(payload);
+    const reply = JSON.stringify(payload, null, 2);
+    console.log(reply);
+    console.log('--------------');
 
     socket.send(`${reply}`);
   });
 
   socket.send(`${timestamp} - You have reached the Web Socket Server!`);
+  console.log(`${timestamp} - You have reached the Web Socket Server!`);
 });
 
 // `server` is a vanilla Node.js HTTP server, so use
@@ -64,6 +69,7 @@ server.on('upgrade', (request, socket, head) => {
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+console.log(`Listening on port: ${port}`);
 
 /**
  * Normalize a port into a number, string, or false.
