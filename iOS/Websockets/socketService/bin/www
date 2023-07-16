@@ -49,8 +49,16 @@ webSocketServer.on('connection', socket => {
     socket.send(`${reply}`);
   });
 
-  socket.send(`${timestamp} - You have reached the Web Socket Server!`);
-  console.log(`${timestamp} - You have reached the Web Socket Server!`);
+  const confirmation = {
+    timestamp: timestamp,
+    greeting: 'You have reached the Web Socket Server!',
+    success: true
+  };
+
+  const confirmConnection = JSON.stringify(confirmation, null, 2);
+
+  socket.send(confirmConnection);
+  console.log(confirmConnection);
 });
 
 // `server` is a vanilla Node.js HTTP server, so use
