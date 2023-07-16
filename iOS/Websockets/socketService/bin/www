@@ -10,8 +10,8 @@ const http = require('http');
 const websocket = require('ws');
 const moment = require('moment');
 const uuid = require('uuid');
-const {json} = require("express");
-const repl = require("repl");
+const dateFormat = 'yyyy-MM-ddTHH:mm:ss.SSS';
+const fortunes = require('../data/fortune.json');
 
 /**
  * Initialize the web socket server
@@ -29,17 +29,18 @@ const server = http.createServer(app);
 // events that come in.
 const webSocketServer = new websocket.Server({ noServer: true });
 webSocketServer.on('connection', socket => {
-  const now = new Date();
-  const timestamp = moment().format();
 
   socket.on('message', message => {
-    // console.log('->\n%s', message);
-    // socket.send(`${timestamp} - ${message}`);
+    const entries = Object.entries(fortunes);
+    const randomKey = entries.length * Math.random() << 0;
+    const sayings = entries[randomKey][1];
+    const randomFortune = sayings[sayings.length * Math.random() << 0];
 
     const payload = {
-      guid: uuid.v4(),
-      timestamp: timestamp,
-      received: `${message}`
+      id: uuid.v4(),
+      timestamp: moment().format(dateFormat),
+      yourMessage: `${message}`,
+      myMessage: randomFortune
     };
 
     const reply = JSON.stringify(payload, null, 2);
@@ -50,9 +51,9 @@ webSocketServer.on('connection', socket => {
   });
 
   const confirmation = {
-    timestamp: timestamp,
-    greeting: 'You have reached the Web Socket Server!',
-    success: true
+    id: uuid.v4(),
+    timestamp: moment().format(dateFormat),
+    myMessage: 'Greetings, Earthling.\nYou may now communicate!'
   };
 
   const confirmConnection = JSON.stringify(confirmation, null, 2);
