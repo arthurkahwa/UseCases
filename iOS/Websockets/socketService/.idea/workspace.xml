@@ -4,39 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecf43806-b1fb-4405-a791-e1b5391fbcfb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/socketService.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JWTDemo/angularApp/tsconfig.spec.json" beforeDir="false" />
+    <list default="true" id="ecf43806-b1fb-4405-a791-e1b5391fbcfb" name="Changes" comment="Create Web Socket service">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,11 +51,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689457104182</updated>
-      <workItem from="1689457105203" duration="5345000" />
+      <workItem from="1689457105203" duration="10054000" />
     </task>
+    <task id="LOCAL-00001" summary="Create Web Socket service">
+      <option name="closed" value="true" />
+      <created>1689462510300</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1689462510300</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create Web Socket service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Web Socket service" />
   </component>
 </project>

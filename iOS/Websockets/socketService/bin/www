@@ -7,12 +7,14 @@
 const app = require('../app');
 const debug = require('debug')('socketservice:server');
 const http = require('http');
-const ws = require('ws');
+const websocket = require('ws');
+const moment = require('moment');
+const uuid = require('uuid');
+const {json} = require("express");
 
 /**
  * Initialize the web socket server
  */
-
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
@@ -24,15 +26,26 @@ const server = http.createServer(app);
 
 // Set up a headless websocket server that prints any
 // events that come in.
-const wsServer = new ws.Server({ noServer: true });
-wsServer.on('connection', socket => {
-  socket.on('message', message => {
-    console.log('->\n%s', message);
+const webSocketServer = new websocket.Server({ noServer: true });
+webSocketServer.on('connection', socket => {
+  const now = new Date();
+  const timestamp = moment().format();
 
-    socket.send(`You sent: ${message}`);
+  socket.on('message', message => {
+    // console.log('->\n%s', message);
+    // socket.send(`${timestamp} - ${message}`);
+
+    const payload = {
+      timestamp: timestamp,
+      guid: uuid.v4()
+    };
+
+    const reply = JSON.stringify(payload);
+
+    socket.send(`${reply}`);
   });
 
-  socket.send('You have reached the Web Socket Server!')
+  socket.send(`${timestamp} - You have reached the Web Socket Server!`);
 });
 
 // `server` is a vanilla Node.js HTTP server, so use
@@ -40,8 +53,8 @@ wsServer.on('connection', socket => {
 // https://www.npmjs.com/package/ws#multiple-servers-sharing-a-single-https-server
 // const server = app.listen(3000);
 server.on('upgrade', (request, socket, head) => {
-  wsServer.handleUpgrade(request, socket, head, socket => {
-    wsServer.emit('connection', socket, request);
+  webSocketServer.handleUpgrade(request, socket, head, socket => {
+    webSocketServer.emit('connection', socket, request);
   });
 });
 
