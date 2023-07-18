@@ -18,7 +18,7 @@ Uses:
 
 ## Universal Blogger
 The moving parts of a simple blogging app
-* SpringBoot Backend providing REST function
+* REST service with ```Spring Boot``` function
 * SwiftUI front end
 
 ## async-await with JSONDecoder
