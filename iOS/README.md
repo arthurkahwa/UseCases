@@ -1,5 +1,14 @@
 # iOS SwiftUI Use Cases
 
+## WebSocket Demo
+A simple Application that connects to a local web socket service.
+
+When you connect and send a message you get a cheerful answer from the server.
+
+We use:
+* Web Sockets
+* SwiftUI animations
+
 ## JWT Demo
 Demonstrates using JWT to authenticate an iOS User and give them access to restricted resources.
 Uses:
