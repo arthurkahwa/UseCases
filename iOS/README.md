@@ -6,7 +6,7 @@ A simple Application that connects to a local web socket service.
 When you connect and send a message you get a cheerful answer from the server.
 
 We use:
-* Web Sockets
+* Web Sockets in ```express.js```
 * SwiftUI animations
 
 ## JWT Demo
