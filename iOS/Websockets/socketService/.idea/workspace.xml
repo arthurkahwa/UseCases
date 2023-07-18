@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecf43806-b1fb-4405-a791-e1b5391fbcfb" name="Changes" comment="Create Web Socket service">
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp/Assets.xcassets/AccentColor.colorset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp/Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp/ContentView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp/Message.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp/Preview Content/Preview Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp/ViewModel.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp.entitlements" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketApp/iOSWebSocketAppApp.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/fortune.json" afterDir="false" />
+    <list default="true" id="ecf43806-b1fb-4405-a791-e1b5391fbcfb" name="Changes" comment="Create Web Socket app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689457104182</updated>
-      <workItem from="1689457105203" duration="20649000" />
+      <workItem from="1689457105203" duration="22059000" />
     </task>
     <task id="LOCAL-00001" summary="Create Web Socket service">
       <option name="closed" value="true" />
@@ -104,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689469866982</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Create Web Socket app">
+      <option name="closed" value="true" />
+      <created>1689530770064</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689530770064</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +106,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create Web Socket service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Web Socket service" />
+    <MESSAGE value="Create Web Socket app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Web Socket app" />
   </component>
 </project>
