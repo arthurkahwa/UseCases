@@ -10,10 +10,12 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {ClipboardModule} from "@angular/cdk/clipboard";
+import { CallInfoDialogComponent } from './call-info-dialog/call-info-dialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CallInfoDialogComponent
   ],
   imports: [
     AppRoutingModule,
