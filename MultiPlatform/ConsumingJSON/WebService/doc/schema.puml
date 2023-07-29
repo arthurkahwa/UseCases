@@ -1,0 +1,7 @@
+@startuml
+users --|> albums
+posts --|> comments
+albums --|> photos
+users --|> posts
+users --|> todos
+@enduml
