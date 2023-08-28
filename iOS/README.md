@@ -1,5 +1,12 @@
 # iOS SwiftUI Use Cases
 
+## Flickr Photos
+Explorina use case for the SwiftUI GemetryReader in a sort of picture Album type thing.
+
+Using the provided text field, you can also add your own tags..
+Yes, we are missing a persistence layer - comming soon - stay tuned.
+![Flickr Photos](FlickrPhotoGallery/images/flickrPhotos.gif)
+
 ## Property Wrappers
 A short demontration on how to implement your own property wrappers
 
@@ -12,12 +19,16 @@ We use:
 * Web Sockets in ```express.js```
 * SwiftUI animations
 
+![WebSocket](Websockets/image/websocketapp.gif)
+
 ## JWT Demo
 Demonstrates using JWT to authenticate an iOS User and give them access to restricted resources.
 Uses:
 * REST service in ```express.js```
 * Swift actors
 * MapKit in SwiftUI
+
+![JWT Demo](JWTDemo/images/jwtdemo.gif)
 
 ## Universal Blogger
 The moving parts of a simple blogging app
