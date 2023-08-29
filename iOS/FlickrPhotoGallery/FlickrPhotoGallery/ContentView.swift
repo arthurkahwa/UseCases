@@ -10,7 +10,6 @@ import SwiftData
 
 struct ContentView: View {
     @State private var viewModel = ViewModel()
-//    @Query(sort: \.name) var tags: [FlickrTagModel]
     
     var body: some View {
         VStack {
