@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     @State private var viewModel = ViewModel()
+//    @Query(sort: \.name) var tags: [FlickrTagModel]
     
     var body: some View {
         VStack {
@@ -21,16 +23,20 @@ struct ContentView: View {
                 TextField(text: $viewModel.enteredTag) {
                     Text("Enter a Tag")
                         .font(.system(size: 24))
+                        .padding()
                 }
                 .onSubmit {
                     viewModel.flickrTags.insert(viewModel.enteredTag.lowercased())
                     viewModel.selectedTag = viewModel.enteredTag
+                    viewModel.save()
+                    viewModel.enteredTag = ""
                 }
-                List(viewModel.flickrTags.sorted(),
-                     id: \.self,
+                
+                List(viewModel.savedTags,
+                     id: \.name,
                      selection: $viewModel.selectedTag) { flickrTag in
-                    Text(flickrTag)
-                        .font(.title3)
+                    Text(flickrTag.name)
+                        .font(.system(size: 28))
                 }
                      .navigationTitle("Tags")
                      .onChange(of: viewModel.selectedTag) {

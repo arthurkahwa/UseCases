@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @Observable
 class ViewModel {
     var photos: [URL] = []
     var selectedTag: String? = "landscape"
     var enteredTag = ""
+    var context: ModelContext { ModelContext(try! ModelContainer(for: FlickrTagModel.self)) }
+    
+    var savedTags: [FlickrTagModel] {
+        let fetchedTags = FetchDescriptor<FlickrTagModel>(sortBy: [SortDescriptor(\.name)])
+        
+        do {
+            return try context.fetch(fetchedTags)
+        }
+        catch { return [] }
+    }
     
     var flickrTags: Set<String> = ["landscape", "nasa", "night", "blackandwhite", "sea", "sun", "lake", "garden", "tree", "portrait", "macro", "blue", "bridge", "orange", "bird", "white", "old", "city", "music", "art", "river", "sky", "snow", "light", "dog", "cat", "yellow", "house", "people", "trees", "nature", "bw", "flower", "family", "sommer", "clouds", "food", "spacex", "car", "new", "moon", "sunset", "street", "water", "christmas", "pink", "park", "winter", "beach", "green"]
     
@@ -24,6 +35,7 @@ class ViewModel {
         
         return.success(url)
     }
+    
     
     init() {
         Task {
@@ -50,5 +62,23 @@ class ViewModel {
         case .failure(_):
             break
         }
+    }
+    
+    func allTags() -> [FlickrTagModel] {
+        let savedTags = FetchDescriptor<FlickrTagModel>(sortBy: [SortDescriptor(\.name)])
+        
+        do {
+            let results = try context.fetch(savedTags)
+            
+            return results
+        }
+        catch {
+            return []
+        }
+    }
+    
+    func save() {
+        let tag = FlickrTagModel(name: enteredTag)
+        context.insert(tag)
     }
 }
