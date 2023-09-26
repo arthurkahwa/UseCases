@@ -13,7 +13,9 @@ class ViewModel {
     var photos: [URL] = []
     var selectedTag: String? = "landscape"
     var enteredTag = ""
-    var context: ModelContext { ModelContext(try! ModelContainer(for: FlickrTagModel.self)) }
+    let configuration = ModelConfiguration("flickrConfiguration", readOnly: false)
+    var context: ModelContext { ModelContext(try! ModelContainer(for: FlickrTagModel.self, configuration))}
+//    var context: ModelContext { ModelContext(try! ModelContainer(for: FlickrTagModel.self, configuration: configuration)) }
     
     var savedTags: [FlickrTagModel] {
         let fetchedTags = FetchDescriptor<FlickrTagModel>(sortBy: [SortDescriptor(\.name)])
