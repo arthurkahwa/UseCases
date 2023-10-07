@@ -8,8 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab = 0
+    
     var body: some View {
-        BrowseSection()
+        TabView(selection: $selectedTab) {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            
+            Text("Products")
+                .tabItem {
+                    Label("Products", systemImage: "applewatch")
+                }
+            
+            Text("Bag")
+                .tabItem {
+                    Label("Bag", systemImage: "bag")
+                }
+            
+            Text("Favorites")
+                .tabItem {
+                    Label("Favorites", systemImage: "heart")
+                }
+        }
     }
 }
 
