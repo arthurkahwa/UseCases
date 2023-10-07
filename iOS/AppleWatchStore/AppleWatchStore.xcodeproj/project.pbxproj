@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8ED2662B2AD1BC2E00CF1C51 /* PopularSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2662A2AD1BC2E00CF1C51 /* PopularSection.swift */; };
 		8EE3A0F52ACDF5E200CC7B6E /* AppleWatchStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3A0F42ACDF5E200CC7B6E /* AppleWatchStoreApp.swift */; };
 		8EE3A0F72ACDF5E200CC7B6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3A0F62ACDF5E200CC7B6E /* ContentView.swift */; };
 		8EE3A0F92ACDF5E300CC7B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE3A0F82ACDF5E300CC7B6E /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8ED2662A2AD1BC2E00CF1C51 /* PopularSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSection.swift; sourceTree = "<group>"; };
 		8EE3A0F12ACDF5E200CC7B6E /* AppleWatchStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE3A0F42ACDF5E200CC7B6E /* AppleWatchStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWatchStoreApp.swift; sourceTree = "<group>"; };
 		8EE3A0F62ACDF5E200CC7B6E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				8EE3A1082ACDFB6500CC7B6E /* SupportingViews */,
-				8EE3A1192AD19FB400CC7B6E /* GridProductItem.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -136,6 +137,8 @@
 			children = (
 				8EE3A10F2ACF0B0900CC7B6E /* CardView.swift */,
 				8EE3A1172AD1952F00CC7B6E /* BrowseSection.swift */,
+				8EE3A1192AD19FB400CC7B6E /* GridProductItem.swift */,
+				8ED2662A2AD1BC2E00CF1C51 /* PopularSection.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				8EE3A0F72ACDF5E200CC7B6E /* ContentView.swift in Sources */,
 				8EE3A0F52ACDF5E200CC7B6E /* AppleWatchStoreApp.swift in Sources */,
 				8EE3A1122ACF0B5600CC7B6E /* Constants.swift in Sources */,
+				8ED2662B2AD1BC2E00CF1C51 /* PopularSection.swift in Sources */,
 				8EE3A1102ACF0B0900CC7B6E /* CardView.swift in Sources */,
 				8EE3A10E2ACDFE8500CC7B6E /* Collection+Extension.swift in Sources */,
 			);
