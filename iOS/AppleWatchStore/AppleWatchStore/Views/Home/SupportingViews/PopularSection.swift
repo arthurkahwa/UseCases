@@ -11,22 +11,22 @@ struct PopularSection: View {
     var body: some View {
         VStack {
             SectionHeader(title: "Popular", icon: "slider.horizontal.3")
+                .padding(.horizontal)
             
             LazyVGrid(columns: Constants.columns, spacing: 20) {
                 ForEach(0..<4) { _ in
-                    NavigationLink {
-                        
-                    } label: {
+                    NavigationLink {} label: {
                         GridProductItem()
                     }
-
+                    .buttonStyle(.plain)
                 }
             }
         }
-        .padding()
     }
 }
 
 #Preview {
-    PopularSection()
+    NavigationStack {
+        PopularSection()
+    }
 }
