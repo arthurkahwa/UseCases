@@ -16,6 +16,8 @@
 		8ED2663A2AD2F45700CF1C51 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED266392AD2F45700CF1C51 /* FavoritesView.swift */; };
 		8ED2663F2AD2F5F500CF1C51 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2663E2AD2F5F500CF1C51 /* Theme.swift */; };
 		8ED266412AD2FB6C00CF1C51 /* ProductsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED266402AD2FB6C00CF1C51 /* ProductsGridView.swift */; };
+		8ED266432AD3028C00CF1C51 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED266422AD3028B00CF1C51 /* FilterView.swift */; };
+		8ED266452AD302D600CF1C51 /* FilterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED266442AD302D600CF1C51 /* FilterSectionView.swift */; };
 		8EE3A0F52ACDF5E200CC7B6E /* AppleWatchStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3A0F42ACDF5E200CC7B6E /* AppleWatchStoreApp.swift */; };
 		8EE3A0F72ACDF5E200CC7B6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3A0F62ACDF5E200CC7B6E /* ContentView.swift */; };
 		8EE3A0F92ACDF5E300CC7B6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE3A0F82ACDF5E300CC7B6E /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 		8ED266392AD2F45700CF1C51 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		8ED2663E2AD2F5F500CF1C51 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8ED266402AD2FB6C00CF1C51 /* ProductsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsGridView.swift; sourceTree = "<group>"; };
+		8ED266422AD3028B00CF1C51 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		8ED266442AD302D600CF1C51 /* FilterSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionView.swift; sourceTree = "<group>"; };
 		8EE3A0F12ACDF5E200CC7B6E /* AppleWatchStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE3A0F42ACDF5E200CC7B6E /* AppleWatchStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleWatchStoreApp.swift; sourceTree = "<group>"; };
 		8EE3A0F62ACDF5E200CC7B6E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				8ED266402AD2FB6C00CF1C51 /* ProductsGridView.swift */,
+				8ED266422AD3028B00CF1C51 /* FilterView.swift */,
+				8ED266442AD302D600CF1C51 /* FilterSectionView.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -286,7 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED266432AD3028C00CF1C51 /* FilterView.swift in Sources */,
 				8ED266382AD2F40A00CF1C51 /* CartView.swift in Sources */,
+				8ED266452AD302D600CF1C51 /* FilterSectionView.swift in Sources */,
 				8EE3A10C2ACDFD2100CC7B6E /* SectionHeader.swift in Sources */,
 				8EE3A1182AD1952F00CC7B6E /* BrowseSection.swift in Sources */,
 				8EE3A10A2ACDFC9800CC7B6E /* ScaledFont.swift in Sources */,

@@ -12,7 +12,7 @@ extension ButtonStyle where Self == CustomButtonStyle {
         return .init(radius: 6, background: Color(.baseLightGrey))
     }
     
-    static var borderedBlack: Self {
+    static var customBorderedBlack: Self {
         return .init(radius: 6, background: Color(.baseBlack))
     }
 }
