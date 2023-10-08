@@ -9,7 +9,17 @@ import SwiftUI
 
 struct ProductsView: View {
     var body: some View {
-        Text("Hello Products")
+        NavigationStack {
+            ScrollView {
+                content
+            }
+            .navigationTitle("APPLE WATCHES")
+            .navigationBarTitleDisplayMode(.large)
+        }
+    }
+    
+    var content: some View {
+        ProductsGridView()
     }
 }
 
