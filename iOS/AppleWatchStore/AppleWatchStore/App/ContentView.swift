@@ -16,22 +16,28 @@ struct ContentView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+                .tag(0)
             
-            Text("Products")
+            ProductsView()
                 .tabItem {
                     Label("Products", systemImage: "applewatch")
                 }
+                .tag(1)
             
-            Text("Bag")
+            CartView()
                 .tabItem {
                     Label("Bag", systemImage: "bag")
                 }
+                .badge(88)
+                .tag(2)
             
-            Text("Favorites")
+            FavoritesView()
                 .tabItem {
                     Label("Favorites", systemImage: "heart")
                 }
+                .tag(3)
         }
+        .customNavigationBar()
     }
 }
 
