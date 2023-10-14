@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E8D07D62ADADD910086A25F /* ProductDetailDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07D52ADADD910086A25F /* ProductDetailDescriptionView.swift */; };
 		8ED2662B2AD1BC2E00CF1C51 /* PopularSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2662A2AD1BC2E00CF1C51 /* PopularSection.swift */; };
 		8ED2662D2AD1C36300CF1C51 /* CategoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2662C2AD1C36300CF1C51 /* CategoryListItem.swift */; };
 		8ED2662F2AD1C67D00CF1C51 /* CategorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2662E2AD1C67D00CF1C51 /* CategorySection.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E8D07D52ADADD910086A25F /* ProductDetailDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailDescriptionView.swift; sourceTree = "<group>"; };
 		8ED2662A2AD1BC2E00CF1C51 /* PopularSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSection.swift; sourceTree = "<group>"; };
 		8ED2662C2AD1C36300CF1C51 /* CategoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListItem.swift; sourceTree = "<group>"; };
 		8ED2662E2AD1C67D00CF1C51 /* CategorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySection.swift; sourceTree = "<group>"; };
@@ -78,6 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E8D07D32ADADCE60086A25F /* Product Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8E8D07D42ADADD1D0086A25F /* Supporting Views */,
+			);
+			path = "Product Detail";
+			sourceTree = "<group>";
+		};
+		8E8D07D42ADADD1D0086A25F /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E8D07D52ADADD910086A25F /* ProductDetailDescriptionView.swift */,
+			);
+			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
 		8ED266322AD2F34400CF1C51 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,10 +167,10 @@
 		8EE3A0F32ACDF5E200CC7B6E /* AppleWatchStore */ = {
 			isa = PBXGroup;
 			children = (
-				8EE3A1062ACDFB1100CC7B6E /* Views */,
 				8EE3A1032ACDFA7300CC7B6E /* App */,
-				8EE3A1022ACDFA3F00CC7B6E /* Utilities */,
 				8EE3A0FA2ACDF5E300CC7B6E /* Preview Content */,
+				8EE3A1022ACDFA3F00CC7B6E /* Utilities */,
+				8EE3A1062ACDFB1100CC7B6E /* Views */,
 			);
 			path = AppleWatchStore;
 			sourceTree = "<group>";
@@ -194,6 +212,7 @@
 		8EE3A1062ACDFB1100CC7B6E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8E8D07D32ADADCE60086A25F /* Product Detail */,
 				8EE3A1072ACDFB3900CC7B6E /* Home */,
 			);
 			path = Views;
@@ -304,6 +323,7 @@
 				8EE3A11A2AD19FB400CC7B6E /* GridProductItem.swift in Sources */,
 				8EE3A11C2AD1ACE300CC7B6E /* Text+Extension.swift in Sources */,
 				8EE3A1142ACF148F00CC7B6E /* CustomButtonStyle.swift in Sources */,
+				8E8D07D62ADADD910086A25F /* ProductDetailDescriptionView.swift in Sources */,
 				8EE3A1162ACF193C00CC7B6E /* ButtonStyle+Extension.swift in Sources */,
 				8EE3A0F72ACDF5E200CC7B6E /* ContentView.swift in Sources */,
 				8EE3A0F52ACDF5E200CC7B6E /* AppleWatchStoreApp.swift in Sources */,
