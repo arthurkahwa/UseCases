@@ -12,6 +12,8 @@
 		8E8D07DA2ADD11440086A25F /* SizeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07D92ADD11440086A25F /* SizeItem.swift */; };
 		8E8D07DC2ADDA1FB0086A25F /* WristItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07DB2ADDA1FB0086A25F /* WristItem.swift */; };
 		8E8D07DE2ADDA44F0086A25F /* WristSizesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07DD2ADDA44F0086A25F /* WristSizesView.swift */; };
+		8E8D07E02ADDA5BA0086A25F /* WifiCellularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07DF2ADDA5BA0086A25F /* WifiCellularView.swift */; };
+		8E8D07E22ADDA7150086A25F /* ConnectivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07E12ADDA7150086A25F /* ConnectivityView.swift */; };
 		8ED2662B2AD1BC2E00CF1C51 /* PopularSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2662A2AD1BC2E00CF1C51 /* PopularSection.swift */; };
 		8ED2662D2AD1C36300CF1C51 /* CategoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2662C2AD1C36300CF1C51 /* CategoryListItem.swift */; };
 		8ED2662F2AD1C67D00CF1C51 /* CategorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2662E2AD1C67D00CF1C51 /* CategorySection.swift */; };
@@ -47,6 +49,8 @@
 		8E8D07D92ADD11440086A25F /* SizeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeItem.swift; sourceTree = "<group>"; };
 		8E8D07DB2ADDA1FB0086A25F /* WristItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WristItem.swift; sourceTree = "<group>"; };
 		8E8D07DD2ADDA44F0086A25F /* WristSizesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WristSizesView.swift; sourceTree = "<group>"; };
+		8E8D07DF2ADDA5BA0086A25F /* WifiCellularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiCellularView.swift; sourceTree = "<group>"; };
+		8E8D07E12ADDA7150086A25F /* ConnectivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityView.swift; sourceTree = "<group>"; };
 		8ED2662A2AD1BC2E00CF1C51 /* PopularSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSection.swift; sourceTree = "<group>"; };
 		8ED2662C2AD1C36300CF1C51 /* CategoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListItem.swift; sourceTree = "<group>"; };
 		8ED2662E2AD1C67D00CF1C51 /* CategorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySection.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				8E8D07D92ADD11440086A25F /* SizeItem.swift */,
 				8E8D07DB2ADDA1FB0086A25F /* WristItem.swift */,
 				8E8D07DD2ADDA44F0086A25F /* WristSizesView.swift */,
+				8E8D07DF2ADDA5BA0086A25F /* WifiCellularView.swift */,
+				8E8D07E12ADDA7150086A25F /* ConnectivityView.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -344,7 +350,9 @@
 				8EE3A1122ACF0B5600CC7B6E /* Constants.swift in Sources */,
 				8E8D07DE2ADDA44F0086A25F /* WristSizesView.swift in Sources */,
 				8ED2662B2AD1BC2E00CF1C51 /* PopularSection.swift in Sources */,
+				8E8D07E22ADDA7150086A25F /* ConnectivityView.swift in Sources */,
 				8EE3A1102ACF0B0900CC7B6E /* CardView.swift in Sources */,
+				8E8D07E02ADDA5BA0086A25F /* WifiCellularView.swift in Sources */,
 				8E8D07DC2ADDA1FB0086A25F /* WristItem.swift in Sources */,
 				8ED266362AD2F3CE00CF1C51 /* ProductsView.swift in Sources */,
 				8ED266412AD2FB6C00CF1C51 /* ProductsGridView.swift in Sources */,
