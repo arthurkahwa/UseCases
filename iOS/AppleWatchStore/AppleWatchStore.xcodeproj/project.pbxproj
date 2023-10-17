@@ -15,6 +15,7 @@
 		8E8D07E02ADDA5BA0086A25F /* WifiCellularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07DF2ADDA5BA0086A25F /* WifiCellularView.swift */; };
 		8E8D07E22ADDA7150086A25F /* ConnectivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07E12ADDA7150086A25F /* ConnectivityView.swift */; };
 		8E8D07E42ADF020F0086A25F /* AppleCareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07E32ADF020F0086A25F /* AppleCareView.swift */; };
+		8E8D07E62ADF10AD0086A25F /* AddProductReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07E52ADF10AD0086A25F /* AddProductReview.swift */; };
 		8ED2662B2AD1BC2E00CF1C51 /* PopularSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2662A2AD1BC2E00CF1C51 /* PopularSection.swift */; };
 		8ED2662D2AD1C36300CF1C51 /* CategoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2662C2AD1C36300CF1C51 /* CategoryListItem.swift */; };
 		8ED2662F2AD1C67D00CF1C51 /* CategorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED2662E2AD1C67D00CF1C51 /* CategorySection.swift */; };
@@ -53,6 +54,7 @@
 		8E8D07DF2ADDA5BA0086A25F /* WifiCellularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiCellularView.swift; sourceTree = "<group>"; };
 		8E8D07E12ADDA7150086A25F /* ConnectivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityView.swift; sourceTree = "<group>"; };
 		8E8D07E32ADF020F0086A25F /* AppleCareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCareView.swift; sourceTree = "<group>"; };
+		8E8D07E52ADF10AD0086A25F /* AddProductReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductReview.swift; sourceTree = "<group>"; };
 		8ED2662A2AD1BC2E00CF1C51 /* PopularSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSection.swift; sourceTree = "<group>"; };
 		8ED2662C2AD1C36300CF1C51 /* CategoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListItem.swift; sourceTree = "<group>"; };
 		8ED2662E2AD1C67D00CF1C51 /* CategorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySection.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				8E8D07D52ADADD910086A25F /* ProductDetailDescriptionView.swift */,
+				8E8D07E52ADF10AD0086A25F /* AddProductReview.swift */,
 				8E8D07D72ADD10880086A25F /* CaseSizesView.swift */,
 				8E8D07D92ADD11440086A25F /* SizeItem.swift */,
 				8E8D07DB2ADDA1FB0086A25F /* WristItem.swift */,
@@ -352,6 +355,7 @@
 				8EE3A0F52ACDF5E200CC7B6E /* AppleWatchStoreApp.swift in Sources */,
 				8EE3A1122ACF0B5600CC7B6E /* Constants.swift in Sources */,
 				8E8D07DE2ADDA44F0086A25F /* WristSizesView.swift in Sources */,
+				8E8D07E62ADF10AD0086A25F /* AddProductReview.swift in Sources */,
 				8ED2662B2AD1BC2E00CF1C51 /* PopularSection.swift in Sources */,
 				8E8D07E22ADDA7150086A25F /* ConnectivityView.swift in Sources */,
 				8EE3A1102ACF0B0900CC7B6E /* CardView.swift in Sources */,
