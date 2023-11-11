@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E3936752AFFC3C600C73162 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3936742AFFC3C600C73162 /* Endpoint.swift */; };
+		8E3936772AFFC48100C73162 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3936762AFFC48100C73162 /* HTTPClient.swift */; };
+		8E3936792AFFC4EB00C73162 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3936782AFFC4EB00C73162 /* HttpMethod.swift */; };
+		8E39367B2AFFC54300C73162 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E39367A2AFFC54300C73162 /* RequestError.swift */; };
 		8E8D07D62ADADD910086A25F /* ProductDetailDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07D52ADADD910086A25F /* ProductDetailDescriptionView.swift */; };
 		8E8D07D82ADD10880086A25F /* CaseSizesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07D72ADD10880086A25F /* CaseSizesView.swift */; };
 		8E8D07DA2ADD11440086A25F /* SizeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D07D92ADD11440086A25F /* SizeItem.swift */; };
@@ -46,6 +50,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E3936742AFFC3C600C73162 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		8E3936762AFFC48100C73162 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		8E3936782AFFC4EB00C73162 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		8E39367A2AFFC54300C73162 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		8E8D07D52ADADD910086A25F /* ProductDetailDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailDescriptionView.swift; sourceTree = "<group>"; };
 		8E8D07D72ADD10880086A25F /* CaseSizesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseSizesView.swift; sourceTree = "<group>"; };
 		8E8D07D92ADD11440086A25F /* SizeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeItem.swift; sourceTree = "<group>"; };
@@ -96,6 +104,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E3936722AFFC24600C73162 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8E3936732AFFC39400C73162 /* Base */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8E3936732AFFC39400C73162 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8E3936742AFFC3C600C73162 /* Endpoint.swift */,
+				8E3936762AFFC48100C73162 /* HTTPClient.swift */,
+				8E3936782AFFC4EB00C73162 /* HttpMethod.swift */,
+				8E39367A2AFFC54300C73162 /* RequestError.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		8E8D07D32ADADCE60086A25F /* Product Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +218,7 @@
 		8EE3A0F32ACDF5E200CC7B6E /* AppleWatchStore */ = {
 			isa = PBXGroup;
 			children = (
+				8E3936722AFFC24600C73162 /* Networking */,
 				8EE3A1032ACDFA7300CC7B6E /* App */,
 				8EE3A0FA2ACDF5E300CC7B6E /* Preview Content */,
 				8EE3A1022ACDFA3F00CC7B6E /* Utilities */,
@@ -342,6 +370,8 @@
 				8E8D07D82ADD10880086A25F /* CaseSizesView.swift in Sources */,
 				8ED266382AD2F40A00CF1C51 /* CartView.swift in Sources */,
 				8ED266452AD302D600CF1C51 /* FilterSectionView.swift in Sources */,
+				8E39367B2AFFC54300C73162 /* RequestError.swift in Sources */,
+				8E3936792AFFC4EB00C73162 /* HttpMethod.swift in Sources */,
 				8E8D07DA2ADD11440086A25F /* SizeItem.swift in Sources */,
 				8EE3A10C2ACDFD2100CC7B6E /* SectionHeader.swift in Sources */,
 				8EE3A1182AD1952F00CC7B6E /* BrowseSection.swift in Sources */,
@@ -369,7 +399,9 @@
 				8ED266312AD1C7FA00CF1C51 /* HomeView.swift in Sources */,
 				8ED2662D2AD1C36300CF1C51 /* CategoryListItem.swift in Sources */,
 				8ED2663F2AD2F5F500CF1C51 /* Theme.swift in Sources */,
+				8E3936772AFFC48100C73162 /* HTTPClient.swift in Sources */,
 				8EE3A10E2ACDFE8500CC7B6E /* Collection+Extension.swift in Sources */,
+				8E3936752AFFC3C600C73162 /* Endpoint.swift in Sources */,
 				8ED2663A2AD2F45700CF1C51 /* FavoritesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
